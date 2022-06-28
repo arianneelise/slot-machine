@@ -35,9 +35,18 @@ class Player {
 
 const getNameAmt = () => {
   const nameInput = prompt("What is your name?");
-  const amtInput = parseInt(
-    prompt(`How much $ do you want to put in the pot, ${nameInput}?`)
+  let amtInput = prompt(
+    `How much $ do you want to put in the pot, ${nameInput}?`
   );
+  let flag = false;
+  while (!flag) {
+    if (parseInt(amtInput)) {
+      amtInput = parseInt(amtInput);
+      flag = true;
+    } else {
+      amtInput = prompt(`Sorry, ${nameInput}, you need to enter an integer.`);
+    }
+  }
   player = new Player(amtInput, nameInput);
   player.displayPlayer();
 };
