@@ -8,7 +8,7 @@ export class PlayGame {
     self.spinResult = null;
     self.spinToMatch = null;
     self.didWin = false;
-    self.giveChance = [0, 1, 2, 3, 4, 5];
+    self.giveChance = [0, 1, 2, 3, 4];
   }
 
   async spinSymbols() {
